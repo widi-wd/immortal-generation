@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliyah</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        .container {
+            padding: 20px;
+        }
+        .card {
+            background-color: #161b22;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .card:hover {
+            background-color: #1f6feb;
+        }
+        .card h2 {
+            font-size: 20px;
+            margin: 0 0 10px 0;
+        }
+        .card p {
+            font-size: 14px;
+            margin: 0 0 20px 0;
+        }
+        .card .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .badge-popular {
+            background-color: #1f6feb; /* Blue */
+            color: #ffffff;
+        }
+        .badge-new {
+            background-color: #238636; /* Green */
+            color: #ffffff;
+        }
+        .badge-beta {
+            background-color: #d29922; /* Yellow */
+            color: #ffffff;
+        }
+        .card .icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            background-color: #0d1117;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .card .try-now {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #8b949e;
+            cursor: pointer;
+        }
+        .card .try-now i {
+            margin-left: 5px;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            position: fixed; /* Icon stays in place */
+            top: 10px;
+            left: 10px;
+            background-color: #642edc;
+            border: none;
+            border-radius: 10%;
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            pointer-events: auto;
+            z-index: 100; /* Ensure it is above other elements */
+        }
+  
+          /* Custom SweetAlert2 styling */
+        .swal2-popup {
+            border-radius: 15px !important;
+            font-size: 14px !important;
+        }      
+
+        .back-button i {
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+  <a class="back-button" href="Base.html">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+
+  <div class="container">
+    <!-- Cards will be generated here -->
+  </div>
+
+  <script>
+        const users = [
+            { name: "Adly Satria", text: "Keberhasilan dimulai dari langkah kecil yang konsisten.", instagram: "" },
+            { name: "Aria Azzaki", text: "Jangan takut gagal, karena itu adalah guru terbaik.", instagram: "" },
+            { name: "Fadlan Islahudin", text: "Mimpi besar butuh usaha besar, tapi hasilnya tak ternilai.", instagram: "https://www.instagram.com/dlaan_ish?igsh=MTY0Y2V5eHVuOGMzZg==" },
+            { name: "Idris Affandi", text: "Hanya mereka yang berani melangkah yang akan sampai ke tujuan.", instagram: "" },
+            { name: "Mufiidurrizki", text: "Kegagalan hanyalah jalan lain menuju kesuksesan.", instagram: "https://www.instagram.com/mufid_durr?igsh=MWt6M2R1OHZicWZzcw==" },
+            { name: "Muhammad Fardham", text: "Setiap hari adalah kesempatan untuk menjadi lebih baik.", instagram: "https://www.instagram.com/fardhan_adan?igsh=MTcxc3lucGxoeThvdw==" },
+            { name: "Muhammad Ikhsan", text: "Jangan berhenti mencoba, keberhasilan mungkin tinggal selangkah lagi.", instagram: "https://www.instagram.com/m.ikhsan1122?igsh=MXBwd2tmeHJlamxhYw==" },
+            { name: "Okta Pian Diski", text: "Jangan bandingkan dirimu dengan orang lain, fokuslah pada kemajuanmu sendiri.", instagram: "" },
+            { name: "Reno Sugali", text: "Jangan tunggu sempurna untuk memulai, cukup mulai dan teruslah belajar.", instagram: "https://www.instagram.com/reno_caca_019?igsh=N2hlMnV1bGx4N3J2" },
+            { name: "Satria Tri Rizki", text: "Waktu terbaik untuk memulai adalah sekarang.", instagram: "https://www.instagram.com/satriaarzki_?igsh=dG5vZmpodXhzcDg0" },
+            { name: "Annisa Utzakiya Mufida", text: "Hidup ini terlalu singkat untuk menyerah pada mimpi-mimpimu.", instagram: "https://www.instagram.com/anisa_zakia15?igsh=d2w5MXM2YnRkOHlq" },
+            { name: "Aqila Alivia", text: "Berhenti mengeluh, mulailah bertindak.", instagram: "https://www.instagram.com/all_aqila_?igsh=cmN6ejczY2tob3Fx" },
+            { name: "Dacha kharisma", text: "Keajaiban terjadi ketika kamu percaya pada dirimu sendiri.", instagram: "" },
+            { name: "Dhia Hisanah", text: "Bangun hari ini untuk menjadi versi terbaik dari dirimu.", instagram: "" },
+            { name: "Dini Amelia", text: "Sukses bukan tentang siapa yang cepat, tapi siapa yang konsisten.", instagram: "https://www.instagram.com/dinzz07_?igsh=MWxoazJwYnp6Y3oyNg==" },
+            { name: "Fanni Affnan Jannati", text: "Jangan takut bermimpi besar, tapi jangan lupa bertindak nyata.", instagram: "https://www.instagram.com/fanni_afn_jannt?igsh=c2pocDZrdmdmN2Rm" },
+            { name: "Miranda Veronika", text: "Kesempatan besar seringkali tersembunyi dalam hal-hal kecil.", instagram: "https://www.instagram.com/miranda_veronikaa0415?igsh=MWphdTg5cXpvbjJnbA==" },
+            { name: "Meli Ramayanti", text: "Jadilah berani, karena keberanian membuka pintu kesempatan.", instagram: "https://www.instagram.com/meliramayanti20?igsh=NXc3M2gxd2RudTUy" },
+            { name: "Padela Azzahra", text: "Fokus pada tujuan, bukan pada gangguan.", instagram: "https://www.instagram.com/padelaazzahh?igsh=MTl4MGE2d2x0NXJtOA==" },
+            { name: "Rara Khafifah Amelia", text: "Kebahagiaan datang ketika kamu mencintai apa yang kamu lakukan.", instagram: "https://www.instagram.com/rara._khafifi._amelia?igsh=emNpd2Z4d2N2Y3pv" },
+            { name: "Rafifah Khairunnisa", text: "Jangan tunggu motivasi datang, mulailah bergerak dan motivasi akan mengikuti.", instagram: "https://www.instagram.com/rafidahkhairunnisa?igsh=eWt2OTF3dzFiZnJ1" },
+            { name: "Raisya Aulia", text: "Langkah kecil setiap hari membawa perubahan besar dalam hidup.", instagram: "https://www.instagram.com/reisya3195?igsh=MTYycHB0bmpobG44" },
+            { name: "Rima Tasya Fili Manda", text: "Jangan menyerah pada mimpi hanya karena prosesnya sulit.", instagram: "https://www.instagram.com/rimahfzaa_052?igsh=MXRqYXZ1MzVuenNsbg==" },
+            { name: "Rizki Aulia Syafitri", text: "Hidup ini tentang mencoba, gagal, bangkit, dan mencoba lagi.", instagram: "https://www.instagram.com/auliasyrizki?igsh=MWVwZmN5ZzlxaWpndA==" },
+            { name: "Rhosita Amelia", text: "Jangan biarkan masa lalu menghalangimu melangkah ke masa depan.", instagram: "https://www.instagram.com/rhosita_ameliaa?igsh=MTloM3hhdmt1M2ZteQ==" },
+            { name: "Syafa Fitri Annisa", text: "Keberhasilan butuh waktu, kesabaran adalah rahasianya.", instagram: "" },
+            { name: "Syifatul Azmi", text: "Setiap hari adalah kesempatan untuk memulai sesuatu yang baru.", instagram: "https://www.instagram.com/syifatulazmi013?igsh=MXZjd3A5NTRsN20zZQ==" },
+            { name: "Suci Ramadhani", text: "Jangan takut pada perubahan, karena itulah cara kita bertumbuh.", instagram: "https://www.instagram.com/suciirmdhni13?igsh=MXZ0eGRsYm5pMDM3eA==" },
+            { name: "Tiya Bela Lestari", text: "Setiap perjalanan dimulai dengan satu langkah kecil.", instagram: "https://www.instagram.com/tiyalestari654?igsh=YWJuNnJyMjdpMzg2" },
+            { name: "Vini Aprilia", text: "Kebiasaan kecil yang positif menciptakan hasil yang luar biasa.", instagram: "https://www.instagram.com/viniapriliaaprilia?igsh=MW55aXQzNDRqZ3JmMQ==" },
+            { name: "Zian Feby Nour Aini", text: "Jangan menyerah, karena mimpi indah butuh waktu untuk terwujud.", instagram: "https://www.instagram.com/zianfebbynouraini?igsh=MXhmdjEwNXJkNHE2dw==" }
+        ];
+
+        const colors = ["#1f6feb", "#238636", "#d29922"]; // Blue, Green, Yellow
+        const container = document.querySelector(".container");
+
+        users.forEach((user, index) => {
+            const color = colors[index % colors.length]; // Cycle through colors
+            const badgeClass = index % colors.length === 0 ? 'badge-popular' : (index % colors.length === 1 ? 'badge-new' : 'badge-beta');
+
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.setAttribute("data-aos", "fade-up");
+            card.setAttribute("onclick", `goToInstagram('${user.instagram}')`);
+            card.innerHTML = `
+                <div class="icon">
+                    <i class="fas fa-user" style="color: ${color};"></i>
+                </div>
+                <h2>${user.name}</h2>
+                <p>${user.text}</p>
+                <div class="try-now">
+                    My Instagram Account <i class="fab fa-instagram" style="color: #e1306c;"></i>
+                </div>
+                <div class="badge ${badgeClass}" style="background-color: ${color};">Kartu Anggota</div>
+            `;
+            container.appendChild(card);
+        });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function goToInstagram(instagramLink) {
+        if (instagramLink) {
+            window.open(instagramLink, "_blank");
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Terjadi Kesalahan',
+                text: 'Anggota ini belum memiliki akun Instagram atau tidak ada dalam data kami.',
+                customClass: {
+                    popup: 'swal2-popup'
+                }
+            });
+        }
+    }
+  </script>
+</body>
+</html>

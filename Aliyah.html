@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliyah</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        .container {
+            padding: 20px;
+        }
+        .card {
+            background-color: #161b22;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .card h2 {
+            font-size: 20px;
+            margin: 0 0 10px 0;
+        }
+        .card p {
+            font-size: 14px;
+            margin: 0 0 20px 0;
+        }
+        .card .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #ffffff;
+        }
+        .card .icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #0d1117; /* Background belakang ikon tetap ada */
+            display: inline-block;
+        }
+        .card .try-now {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #8b949e;
+            cursor: pointer;
+        }
+        .card .try-now i {
+            margin-left: 5px;
+        }
+
+        /* Custom SweetAlert2 styling */
+        .swal2-popup {
+            border-radius: 15px !important;
+            font-size: 14px !important;
+        }
+
+        /* Back button styling */
+        .back-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #642edc;
+            border: none;
+            border-radius: 20%;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            z-index: 1;
+        }
+
+        .back-button i {
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Button -->
+    <a class="back-button" href="Base.html">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <div class="container">
+        <!-- Card for Widi Wardana -->
+        <div class="card" data-aos="fade-up" onclick="goToInstagram('https://www.instagram.com/widiwd__?igsh=OW1ra3c0MTY2azh5')">
+            <div class="icon">
+                <i class="fas fa-user" style="color: #1f6feb;"></i>
+            </div>
+            <h2>Widi Wardana</h2>
+            <p>Kesuksesan bukan akhir, kegagalan bukan fatal. yang penting adalah keberanian untuk melanjutkan.</p>
+            <div class="try-now">
+                My Instagram Account <i class="fab fa-instagram" style="color: #e1306c;"></i>
+            </div>
+            <div class="badge badge-popular" style="background-color: #1f6feb;">Kartu Anggota</div>
+        </div>
+
+        <!-- Cards generated from JavaScript for other users -->
+    </div>
+
+    <script>
+        const users = [
+            { name: "Aini Indah Sari", color: "#238636", text: "Jangan menunggu waktu yang sempurna, ambil kesempatan dan buat waktu tersebut menjadi sempurna.", instagram: "" },
+            { name: "Dara Ayu Tuah Helau", color: "#d29922", text: "Kegagalan adalah bagian dari perjalanan menuju keberhasilan.", instagram: "https://www.instagram.com/daraayth_?igsh=bWRhMnRicWR6a2My" },
+            { name: "Islah Maharani", color: "#1f6feb", text: "Apa yang kita lakukan hari ini akan mempengaruhi hidup kita di masa depan.", instagram: "https://www.instagram.com/islaadek?igsh=cmJucHV0eHh0M3Bj" },
+            { name: "Leza Emilia", color: "#238636", text: "Berhenti untuk menunggu. karna Waktu tidak akan pernah sempurna.", instagram: "https://www.instagram.com/emilia.leza?igsh=MWN1bnFoeW1ja2pseg==" },
+            { name: "Novtaza Ummun Maghfera", color: "#d29922", text: "Percayalah pada dirimu sendiri, bahkan ketika dunia merasa ragu terhadap dirimu.", instagram: "https://www.instagram.com/nov_taza?igsh=eGsxeG4xNjJjazR4" },
+            { name: "Nurhidayah Ramadhani", color: "#1f6feb", text: "Mimpi tanpa usaha hanyalah angan-angan saja.", instagram: "https://www.instagram.com/mecc_12?igsh=bjFpbXhieDlzODJs" },
+            { name: "Repika Fitri Handani", color: "#238636", text: "Tidak ada jalan pintas menuju tempat yang layak untuk dituju.", instagram: "https://www.instagram.com/repika_25?igsh=MXFuNnhxbXJjbmFweQ==" },
+            { name: "Risma Aulia Chantika", color: "#d29922", text: "Keberanian bukan berarti tidak merasa takut, tetapi kemampuan untuk bertindak meski merasa takut.", instagram: "https://www.instagram.com/risma_auliyaaaa?igsh=MTBxbTQ4cmpjZXQxcw==" },
+            { name: "Yuliani", color: "#1f6feb", text: "Jangan takut gagal, takutlah tidak mencoba.", instagram: "https://www.instagram.com/yu.liani341?igsh=MWFxZXR0a2I1OGxkMw==" }
+        ];
+
+        const container = document.querySelector(".container");
+
+        users.forEach(user => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.setAttribute("data-aos", "fade-up");
+            card.setAttribute("onclick", `goToInstagram('${user.instagram}')`);
+            card.innerHTML = `
+                <div class="icon">
+                    <i class="fas fa-user" style="color: ${user.color};"></i>
+                </div>
+                <h2>${user.name}</h2>
+                <p>${user.text}</p>
+                <div class="try-now">
+                    My Instagram Account <i class="fab fa-instagram" style="color: #e1306c;"></i>
+                </div>
+                <div class="badge" style="background-color: ${user.color};">Kartu Anggota</div>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function goToInstagram(instagramLink) {
+            if (instagramLink) {
+                window.open(instagramLink, "_blank");
+            } else {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Terjadi Kesalahan',
+                    text: 'Anggota ini belum memiliki akun Instagram atau tidak ada dalam data kami.',
+                    customClass: {
+                        popup: 'swal2-popup'
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

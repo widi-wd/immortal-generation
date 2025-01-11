@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IMMORTAL GENERATION</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Made+Tomi:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header Styles */
+    .header {
+      padding: 50px 20px;
+      background-color: #642edc;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      position: relative;
+      margin: 0;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-family: 'Made Tomi', sans-serif;
+      font-size: 48px;
+      margin: 5px 0;
+      letter-spacing: 0;
+      line-height: 0.8;
+    }
+
+    .header p {
+      font-size: 12px;
+      margin: 5px 0;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+    }
+
+    /* Content Styles */
+    .container {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #161b22;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .card:hover {
+      background-color: #1f6feb;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin: 0 0 10px 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin: 0 0 20px 0;
+    }
+
+    .card .badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .badge-popular {
+      background-color: #1f6feb;
+      color: #ffffff;
+    }
+
+    .badge-new {
+      background-color: #238636;
+      color: #ffffff;
+    }
+
+    .badge-beta {
+      background-color: #d29922;
+      color: #ffffff;
+    }
+
+    .card .icon {
+      font-size: 24px;
+      margin-bottom: 10px;
+      background-color: #0d1117;
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .card .try-now {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #8b949e;
+      cursor: pointer;
+    }
+
+    .card .try-now i {
+      margin-left: 5px;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background-color: #161b22;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #8b949e;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <div class="header" data-aos="fade-down" data-aos-duration="800">
+    <i class="fas fa-bars menu-icon"></i> <!-- Ikon menu -->
+    <p class="welcome-text">welcome to</p>
+    <h1>IMMORTAL GENERATION</h1>
+    <p>Generasi yang tidak akan terlupakan dan memiliki kemampuan untuk bertahan menghadapi segala tantangan, perubahan, dan kemunduran sehingga akan selalu dikenang sepanjang masa.</p>
+  </div>
+
+  <!-- Content Section -->
+  <div class="container">
+    <div class="card" data-aos="fade-up" data-aos-duration="800" onclick="window.location.href='Nurul chalik.html'">
+      <div class="icon">
+        <i class="fas fa-home" style="color: #1f6feb;"></i>
+      </div>
+      <h2>NURUL CHALIK</h2>
+      <p>Immortal generation adalah suatu angkatan tahun kelulusan 2024 dari pondok pesantren Nurul Chalik.</p>
+      <div class="try-now">
+        lihat selengkapnya
+        <i class="fas fa-arrow-right"></i>
+      </div>
+      <div class="badge badge-popular">Tentang Lembaga</div>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" onclick="window.location.href='Tsanawiyah.html'">
+      <div class="icon">
+        <i class="fas fa-user" style="color: #238636;"></i>
+      </div>
+      <h2>ANGGOTA TSANAWIYAH</h2>
+      <p>adalah salah satu daftar anggota yang lulus ditingkat tsanawiyah.</p>
+      <div class="try-now">
+        lihat selengkapnya
+        <i class="fas fa-arrow-right"></i>
+      </div>
+      <div class="badge badge-new">Alumni Mts</div>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400" onclick="window.location.href='Aliyah.html'">
+      <div class="icon">
+        <i class="fas fa-user" style="color: #d29922;"></i>
+      </div>
+      <h2>ANGGOTA ALIYAH</h2>
+      <p>adalah salah satu daftar anggota yang lulus ditingkat Aliyah.</p>
+      <div class="try-now">
+        lihat selengkapnya
+        <i class="fas fa-arrow-right"></i>
+      </div>
+      <div class="badge badge-beta">Alumni MA</div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer">
+    ©2024 Immortal Generation | All Rights Reserved
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
